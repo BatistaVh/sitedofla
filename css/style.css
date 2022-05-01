@@ -102,3 +102,9 @@ footer p:hover{
     transition: .4s;
     padding: 5px;
 }
+@media (max-width: 500px){
+    nav a{
+        text-align: center;
+        display: block;
+    }
+}
