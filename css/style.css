@@ -13,6 +13,9 @@
 }
 body{
     background-color: #B2BEBF;
+    padding: 0;
+    margin: 0;
+    border: 0;
 }
 header{
     color: white;
@@ -28,20 +31,29 @@ header p {
     padding-bottom: 30px;
     text-shadow: 2px 2px 1px black;
 }
-nav{
+nav ul{
     background-color: #3B3936;
-    padding: 10px 10px 10px 0px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.666);
+    padding: 0px;
+    display: flex;
 }
-nav a{
+nav ul a{
     text-decoration: none;
     color: #B2BEBF;
     padding: 10px;
 }
+nav ul a li{
+    padding: 5px;
+    list-style: none;
+}
 nav a:hover{
-    background-color: #ffffff;
+    background-color: white;
     color: #000000;
     transition: .5s;
+}
+nav a li:hover{
+    color: #000000;
+    background-color: transparent;
+    transition: .6s;
 }
 main{
     background-color: #889C9B;
@@ -87,6 +99,7 @@ footer{
     height: 80px;
     padding-top: 5px;
     padding-bottom: 20px;
+    margin-bottom: 0px;
 }
 footer p{
     margin: 15px 0px 15px 0px;
@@ -102,12 +115,41 @@ footer p:hover{
     transition: .4s;
     padding: 5px;
 }
-@media (max-width: 500px){
-    nav a{
-        text-align: center;
-        display: block;
+label[for="checar"]{
+    width: 50px;
+    height: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+div.line{
+    width: 90%;
+    height: 4px;
+    background-color: white;
+    margin: 3px 0;
+}
+nav input#checar{
+    display: none;
+}
+@media (max-width: 825px){
+    nav{
+        background-color: #3B3936;
+        flex: 1;
     }
-    nav a:hover{
+    ul.links{
         display: none;
+    }
+    ul.links a:hover{
+        background-color: transparent;
+    }
+    label[for="checar"]{
+        display: flex;
+    }
+    input#checar:checked ~ ul.links{
+        display: block;
+        text-align: center;
+        list-style: none;
     }
 }
